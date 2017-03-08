@@ -1,0 +1,11 @@
+enableDebugConsole = 1;
+
+// gui
+#include "gui\ParentClasses166.hpp"
+#include "gui\InfiniteInventoryGui.hpp"
+
+// functions
+class CfgFunctions
+{
+	#include "CfgFunctions.hpp"
+};
