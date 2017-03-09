@@ -18,6 +18,7 @@ class InventoryFilter: RscCombo
 	w = 13.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	tooltip = "Filter Items"; //--- ToDo: Localize;
+    onLBSelChanged = "[] call 'INFINV_gui_fnc_filterContainer'; false";
 };
 class EquipmentFilter: RscCombo
 {
@@ -27,6 +28,7 @@ class EquipmentFilter: RscCombo
 	w = 13.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	tooltip = "Filter items"; //--- ToDo: Localize;
+    onLBSelChanged = "[] call 'INFINV_gui_fnc_filterEquipment'; false";
 };
 class InventoryContainer: RscListbox
 {
@@ -53,6 +55,7 @@ class AddSingleItemButton: RscButton
 	w = 4 * GUI_GRID_W;
 	h = 1.5 * GUI_GRID_H;
 	tooltip = "Add"; //--- ToDo: Localize;
+	action = "[] call 'INFINV_gui_fnc_addItemToContainer';";
 };
 class TakeSingleItemButton: RscButton
 {
@@ -63,6 +66,7 @@ class TakeSingleItemButton: RscButton
 	w = 4 * GUI_GRID_W;
 	h = 1.5 * GUI_GRID_H;
 	tooltip = "Take"; //--- ToDo: Localize;
+	action = "[] call 'INFINV_gui_fnc_takeItemFromContainer';";
 };
 class TakeAllButton: RscButton
 {
@@ -73,6 +77,7 @@ class TakeAllButton: RscButton
 	w = 8.5 * GUI_GRID_W;
 	h = 1.5 * GUI_GRID_H;
 	tooltip = "Add all"; //--- ToDo: Localize;
+    action = "[] call 'INFINV_gui_fnc_addAllItemsToContainer';";
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT END

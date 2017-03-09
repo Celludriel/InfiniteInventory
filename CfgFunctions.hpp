@@ -1,13 +1,18 @@
 class InfiniteInventoryFunctions {
-	tag = "INFINV";
-
-	class InfiniteInventoryInitialize {
-		file = "functions";
+	class INFINV_gui {
+		file = "functions\gui";
 
 		class addItemToContainer {};
 		class takeItemFromContainer {};
 		class addAllItemsToContainer {};
 		class filterContainer {};
 		class filterEquipment {};
+		class openInventory {};
+	};
+
+	class INFINV_srv {
+		file = "functions\server";
+
+		class register {};
 	};
 };
