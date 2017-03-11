@@ -1,18 +1,22 @@
-class InfiniteInventoryFunctions {
-	class INFINV_gui {
+#define addFunction(fncName)		class fncName { headerType = -1; }
+#define addFunctionPre(fncName)		class fncName { headerType = -1; preInit = 1; }
+#define addFunctionPost(fncName)	class fncName { headerType = -1; postInit = 1; }
+
+class InfInv {
+	class client {
 		file = "functions\gui";
 
-		class addItemToContainer {};
-		class takeItemFromContainer {};
-		class addAllItemsToContainer {};
-		class filterContainer {};
-		class filterEquipment {};
-		class openInventory {};
+		addFunction(addItemToContainer);
+		addFunction(takeItemFromContainer);
+		addFunction(addAllItemsToContainer);
+		addFunction(filterContainer);
+		addFunction(filterEquipment);
+		addFunction(openInventory);
 	};
 
-	class INFINV_srv {
+	class server {
 		file = "functions\server";
 
-		class register {};
+		addFunction(register);
 	};
 };

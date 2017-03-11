@@ -3,6 +3,7 @@ enableDebugConsole = 1;
 // gui
 #include "gui\ParentClasses166.hpp"
 #include "gui\InfiniteInventoryGui.hpp"
+#include "gui\InfiniteInventoryDialog.hpp"
 
 // functions
 class CfgFunctions

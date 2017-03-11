@@ -1,7 +1,9 @@
-if(!isServer) exitWith {};
+if(!isServer || hasInterface) exitWith {};
 
 params ["_container"];
 
+diag_log format ["Registering container: %1", _container];
+
 _container setVariable ["INFINV_CONTENTS", []];
 
-[_container, ["InventoryOpened", { _this call INFINV_gui_fnc_openInventory; true }]] remoteExec ["addEventHandler", 0, true];
+[_container, ["Open", { _this call InfInv_fnc_openInventory; true }]] remoteExec ["addAction", 0, true];
