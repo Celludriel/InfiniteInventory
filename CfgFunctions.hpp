@@ -12,8 +12,9 @@ class InfInv {
 		addFunction(filterContainer);
 		addFunction(filterEquipment);
 		addFunction(openInventory);
-		addFunction(getPlayerContainerGear);
+		addFunction(getPlayerContainers);
 		addFunction(loadEquipmentContainer);
+		addFunction(getContentsFromPlayerContainer);
 	};
 
 	class server {
