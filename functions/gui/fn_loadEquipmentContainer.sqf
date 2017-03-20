@@ -2,17 +2,50 @@ _playerContainers = [] call InfInv_fnc_getPlayerContainers;
 
 diag_log format ["_playerContainerGear: %1", _playerContainers];
 
+_containerContents = [];
 _contents = [];
 
 _uniform = _playerContainers select 0;
 _vest = _playerContainers select 1;
 _backpack = _playerContainers select 2;
 
-_contents = _contents + ([_uniform] call InfInv_fnc_getContentsFromPlayerContainer);
-_contents = _contents + ([_vest] call InfInv_fnc_getContentsFromPlayerContainer);
-_contents = _contents + ([_backpack] call InfInv_fnc_getContentsFromPlayerContainer);
+_containerContents = _containerContents + ([_uniform] call InfInv_fnc_getContentsFromPlayerContainer);
+_containerContents = _containerContents + ([_vest] call InfInv_fnc_getContentsFromPlayerContainer);
+_containerContents = _containerContents + ([_backpack] call InfInv_fnc_getContentsFromPlayerContainer);
+
+ diag_log format ["Resulting _containerContents: %1", _containerContents];
+
+{
+    [_contents, _x select 0, _x select 1] call BIS_fnc_addToPairs;
+} forEach _containerContents;
 
  diag_log format ["Resulting _contents: %1", _contents];
+
+_lb = (findDisplay 1900) displayCtrl 1501;
+
+ {
+     _x params[ "_item", "_count" ];
+     _text = format[ "%1 - %2", _item, _count ];
+     _index = _lb lbAdd _text;
+     _lb lbSetValue [ _index, _count ];
+     _lb lbSetData [ _index, _item ];
+     _pic = switch true do {
+         case ( isClass( configFile >> "CfgWeapons" >> _item ) ) : {
+             getText( configFile >> "CfgWeapons" >> _item >> "picture" )
+         };
+         case ( isClass( configFile >> "CfgMagazines" >> _item ) ) : {
+             getText( configFile >> "CfgMagazines" >> _item >> "picture" )
+         };
+         case ( isClass( configFile >> "CfgVehicles" >> _item ) ) : {
+             getText( configFile >> "CfgVehicles" >> _item >> "picture" )
+         };
+         case ( isClass( configFile >> "CfgGlasses" >> _item ) ) : {
+             getText( configFile >> "CfgGlasses" >> _item >> "picture" )
+         };
+     };
+     _lb lbSetPicture [ _index, _pic ];
+ } forEach _contents;
+
 
 /*
 
