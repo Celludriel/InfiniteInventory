@@ -15,11 +15,14 @@ class InfInv {
 		addFunction(getPlayerContainers);
 		addFunction(loadEquipmentContainer);
 		addFunction(getContentsFromPlayerContainer);
+		addFunction(loadListBoxFromData);
+		addFunction(loadDialogContents);
 	};
 
 	class server {
 		file = "functions\server";
 
 		addFunction(register);
+		addFunction(getContainerContents);
 	};
 };

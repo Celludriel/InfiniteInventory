@@ -1,8 +1,10 @@
 if(!isServer || hasInterface) exitWith {};
 
-params ["_container"];
+params ["_container", ["_defaultContents", []]];
 
-_container setVariable ["INFINV_CONTENTS", []];
+private ["_container"];
+
+_container setVariable ["INFINV_CONTENTS", _defaultContents];
 
 [_container, ["ContainerOpened", {
 	_container = _this select 0;
