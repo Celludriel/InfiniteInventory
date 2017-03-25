@@ -13,10 +13,11 @@ class InfInv {
 		addFunction(filterEquipment);
 		addFunction(openInventory);
 		addFunction(getPlayerContainers);
-		addFunction(loadEquipmentContainer);
 		addFunction(getContentsFromPlayerContainer);
 		addFunction(loadListBoxFromData);
-		addFunction(loadDialogContents);
+		addFunction(loadEquipmentContainer);
+		addFunction(loadInventoryContainerData);
+		addFunction(loadInventoryContainer);
 	};
 
 	class server {

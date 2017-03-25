@@ -2,7 +2,7 @@ if(!isServer || hasInterface) exitWith {};
 
 params ["_container", ["_defaultContents", []]];
 
-private ["_container"];
+diag_log format ["_defaultContents %1", _defaultContents];
 
 _container setVariable ["INFINV_CONTENTS", _defaultContents];
 

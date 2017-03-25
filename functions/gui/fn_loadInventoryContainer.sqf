@@ -1,8 +1,11 @@
-params ["_display"];
+params ["_contents"];
 
-_container = INFINV_CURRENT_CONTAINER;
+private ["_display"];
 
-_contents = [_container] remoteExecCall InfInv_fnc_getContainerContents;
+diag_log format ["InfInv_fnc_getContainerContents contents %1", _contents];
 
-_lb = _display displayCtrl 1500;
-[_lb, _contents] call InfInv_fnc_loadListBoxFromData;
+_display = findDisplay 1900;
+if(count _contents > 0) then {
+    _lb = _display displayCtrl 1500;
+    [_lb, _contents] call InfInv_fnc_loadListBoxFromData;
+};

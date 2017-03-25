@@ -1,6 +1,4 @@
-params ["_display"];
-
-private ["_playerContainers", "_containerContents", "_contents", "_uniform", "_vest", "_backpack", "_lb"];
+private ["_playerContainers", "_containerContents", "_contents", "_uniform", "_vest", "_backpack", "_lb", "_display"];
 
 _playerContainers = [] call InfInv_fnc_getPlayerContainers;
 
@@ -25,5 +23,6 @@ _containerContents = _containerContents + ([_backpack] call InfInv_fnc_getConten
 
  diag_log format ["Resulting _contents: %1", _contents];
 
+_display = findDisplay 1900;
 _lb = _display displayCtrl 1501;
 [_lb, _contents] call InfInv_fnc_loadListBoxFromData;
