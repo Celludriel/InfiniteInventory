@@ -1,3 +1,5 @@
+params ["_display"];
+
 _playerContainers = [] call InfInv_fnc_getPlayerContainers;
 
 diag_log format ["_playerContainerGear: %1", _playerContainers];
@@ -21,10 +23,17 @@ _containerContents = _containerContents + ([_backpack] call InfInv_fnc_getConten
 
  diag_log format ["Resulting _contents: %1", _contents];
 
-_lb = (findDisplay 1900) displayCtrl 1501;
+ diag_log format ["_display: %1", _display];
+
+_lb = _display displayCtrl 1501;
+
+ diag_log format ["_lb: %1", _lb];
 
  {
      _x params[ "_item", "_count" ];
+
+     diag_log format ["Adding _item with _count: %1, %2", _item, _count];
+
      _text = format[ "%1 - %2", _item, _count ];
      _index = _lb lbAdd _text;
      _lb lbSetValue [ _index, _count ];

@@ -10,20 +10,22 @@ _weapons = _playerContainer select 2;
 } forEach _items;
 
 {
+    diag_log format ["Processing weapons: %1", _x];
     {
         if(typeName _x != "ARRAY") then {
-            if(_item != "") then {
+            diag_log format ["Regular add"];
+            if(_x != "") then {
                 [_contents, _x, 1] call BIS_fnc_addToPairs;
             };
         };
 
         if(typeName _x == "ARRAY") then {
             _item = _x select 0;
+            diag_log format ["Adding item %1", _item];
             if(_item != "") then {
                 [_contents, _item, 1] call BIS_fnc_addToPairs;
             };
         };
-
     } forEach _x;
 } forEach _weapons;
 
