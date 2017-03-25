@@ -1,9 +1,14 @@
 params ["_playerContainer"];
 
+private ["_contents", "_items", "_weapons"];
+
 _contents = [];
 
 _items = _playerContainer select 1;
 _weapons = _playerContainer select 2;
+
+diag_log format ["_items: %1", _items];
+diag_log format ["_weapons: %1", _weapons];
 
 {
     [_contents, _x, 1] call BIS_fnc_addToPairs;

@@ -1,5 +1,7 @@
 params ["_display"];
 
+private ["_playerContainers", "_containerContents", "_contents", "_uniform", "_vest", "_backpack", "_lb"];
+
 _playerContainers = [] call InfInv_fnc_getPlayerContainers;
 
 diag_log format ["_playerContainerGear: %1", _playerContainers];
