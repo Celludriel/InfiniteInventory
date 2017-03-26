@@ -2,8 +2,6 @@ if(!isServer || hasInterface) exitWith {};
 
 params ["_container", ["_defaultContents", []]];
 
-diag_log format ["_defaultContents %1", _defaultContents];
-
 _container setVariable ["INFINV_CONTENTS", _defaultContents];
 _container setVariable ["NeedsRefresh", false, true];
 

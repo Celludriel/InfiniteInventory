@@ -2,8 +2,6 @@ params ["_container"];
 
 private ["_ok"];
 
-diag_log format ["Opening container: %1", _container];
-
 INFINV_CURRENT_CONTAINER = _container;
 
 _ok = createDialog "INFINV_Dialog";

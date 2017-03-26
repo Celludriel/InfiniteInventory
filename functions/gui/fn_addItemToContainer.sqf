@@ -1,5 +1,3 @@
-diag_log format ["Taking item from container"];
-
 _display = findDisplay 1900;
 _lb = _display displayCtrl 1501;
 _index = lbCurSel _lb;

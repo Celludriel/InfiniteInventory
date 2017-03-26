@@ -1,11 +1,9 @@
- params ["_listBox", "_contents"];
+params ["_listBox", "_contents"];
 
 lbClear _listBox;
 
 {
     _x params[ "_item", "_count" ];
-
-    diag_log format ["Adding _item with _count: %1, %2", _item, _count];
 
     _displayName = switch true do {
              case ( isClass( configFile >> "CfgWeapons" >> _item ) ) : {

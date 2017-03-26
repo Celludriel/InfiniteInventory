@@ -2,8 +2,6 @@ if(!isServer || hasInterface) exitWith {};
 
 params ["_container", "_items", "_player", "_clientID"];
 
-diag_log format ["Taking from container: %1, %2, %3, %4", _container, _items, _player, _clientID];
-
 {
     private ["_contents", "_currentAmount"];
 
