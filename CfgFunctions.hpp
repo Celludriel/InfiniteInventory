@@ -18,6 +18,8 @@ class InfInv {
 		addFunction(loadEquipmentContainer);
 		addFunction(loadInventoryContainerData);
 		addFunction(loadInventoryContainer);
+		addFunction(toggleControls);
+		addFunction(showError);
 	};
 
 	class server {
@@ -25,5 +27,6 @@ class InfInv {
 
 		addFunction(register);
 		addFunction(getContainerContents);
+		addFunction(takeFromContainerContents);
 	};
 };

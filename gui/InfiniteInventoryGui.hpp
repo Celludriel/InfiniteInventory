@@ -66,9 +66,9 @@ class TakeSingleItemButton: RscButton
 	w = 4 * GUI_GRID_W;
 	h = 1.5 * GUI_GRID_H;
 	tooltip = "Take"; //--- ToDo: Localize;
-	action = "";
+	action = "[] call InfInv_fnc_takeItemFromContainer;";
 };
-class TakeAllButton: RscButton
+class AddAllButton: RscButton
 {
 	idc = 1602;
 	text = "<<<"; //--- ToDo: Localize;
