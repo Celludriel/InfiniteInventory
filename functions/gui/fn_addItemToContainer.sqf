@@ -10,6 +10,6 @@ if(_index != -1) then {
     if(_data != "") then {
         [false] call InfInv_fnc_toggleControls;
         player removeItem _data;
-        [INFINV_CURRENT_CONTAINER, [_data], player, clientOwner] remoteExecCall ["InfInv_fnc_addToContainerContents", 2];
+        [INFINV_CURRENT_CONTAINER, [_data], clientOwner] remoteExecCall ["InfInv_fnc_addToContainerContents", 2];
     };
 };

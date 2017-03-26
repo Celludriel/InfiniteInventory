@@ -77,7 +77,7 @@ class AddAllButton: RscButton
 	w = 8.5 * GUI_GRID_W;
 	h = 1.5 * GUI_GRID_H;
 	tooltip = "Add all"; //--- ToDo: Localize;
-    action = "";
+    action = "[] call InfInv_fnc_addAllItemsToContainer;";
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT END

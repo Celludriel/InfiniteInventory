@@ -40,6 +40,8 @@ diag_log format ["_weapons: %1", _weapons];
     } forEach _x;
 } forEach _weapons;
 
+_contents sort false;
+
 diag_log format ["_contents: %1", _contents];
 
 _contents

@@ -7,13 +7,14 @@ class InfInv {
 		file = "functions\gui";
 
 		addFunction(addItemToContainer);
-		addFunction(takeItemFromContainer);
 		addFunction(addAllItemsToContainer);
+		addFunction(takeItemFromContainer);
 		addFunction(filterContainer);
 		addFunction(filterEquipment);
 		addFunction(openInventory);
 		addFunction(getPlayerContainers);
 		addFunction(getContentsFromPlayerContainer);
+		addFunction(getPlayerInventoryContents);
 		addFunction(loadListBoxFromData);
 		addFunction(loadEquipmentContainer);
 		addFunction(loadInventoryContainerData);
@@ -29,5 +30,6 @@ class InfInv {
 		addFunction(getContainerContents);
 		addFunction(takeFromContainerContents);
 		addFunction(addToContainerContents);
+		addFunction(addAllToContainerContents);
 	};
 };
