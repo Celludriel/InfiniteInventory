@@ -28,5 +28,6 @@ class InfInv {
 		addFunction(register);
 		addFunction(getContainerContents);
 		addFunction(takeFromContainerContents);
+		addFunction(addToContainerContents);
 	};
 };

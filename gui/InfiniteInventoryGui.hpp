@@ -55,7 +55,7 @@ class AddSingleItemButton: RscButton
 	w = 4 * GUI_GRID_W;
 	h = 1.5 * GUI_GRID_H;
 	tooltip = "Add"; //--- ToDo: Localize;
-	action = "";
+	action = "[] call InfInv_fnc_addItemToContainer;";
 };
 class TakeSingleItemButton: RscButton
 {
