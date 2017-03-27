@@ -17,6 +17,25 @@ _detachWeaponItem = {
     };
 };
 
+_hasAttachment = {
+    params ["_haystack", "_needle"];
+    _result = false;
+    {
+        if(typeName _x == "ARRAY") then {
+            if(count _x > 0) then {
+                _x = _x select 0;
+            } else {
+                _x = "";
+            };
+        };
+
+        if(_needle == _x) exitWith {
+            _result = true;
+        };
+    } forEach _haystack;
+    _result
+};
+
 //check if is primary weapon
 if( _item == (primaryWeapon player) call Bis_fnc_BaseWeapon) exitWith {
     //if primary weapon and has attachments put attachments in inventory if they can't fit on the ground
@@ -116,9 +135,7 @@ if(!(isNull _backpack)) then {
 //check for attachment
 //check if attachment on primary weapon
 _weaponItems = primaryWeaponItems player + primaryWeaponMagazine player;
-diag_log format ["Removing primaryWeaponItems: %1", _weaponItems];
 if(_weaponItems find _item >= 0) exitWith {
-    diag_log format ["Removing removePrimaryWeaponItem: %1", _item];
     //remove attachment from primary weapon
     player removePrimaryWeaponItem _item;
     true
@@ -126,9 +143,7 @@ if(_weaponItems find _item >= 0) exitWith {
 
 //check if attachment on secondary weapon
 _weaponItems = secondaryWeaponItems player + secondaryWeaponMagazine player;
-diag_log format ["Removing secondaryWeaponItems: %1", _weaponItems];
 if(_weaponItems find _item >= 0) exitWith {
-    diag_log format ["Removing removeSecondaryWeaponItem: %1", _item];
     //remove attachment from secondary weapon
     player removeSecondaryWeaponItem _item;
     true
@@ -136,9 +151,7 @@ if(_weaponItems find _item >= 0) exitWith {
 
 //check if attachment on handgun
 _weaponItems = handgunItems player + handgunMagazine player;
-diag_log format ["Removing handgunItems: %1", _weaponItems];
 if(_weaponItems find _item >= 0) exitWith {
-    diag_log format ["Removing removeHandgunItem: %1", _item];
     //remove attachment from handgun
     player removeHandgunItem _item;
     true
@@ -149,12 +162,13 @@ _weaponItems = weaponsItems _vest;
 _weaponItems = _weaponItems + (weaponsItems _backpack);
 _weaponItems = _weaponItems + (weaponsItems _uniform);
 {
-    if(_weaponItems find _item >= 0) exitWith {
-        //remove from carried weapon in inventory
-        //only way is to fake disassembling the weapon and adding each part again except the one we don't want
+    diag_log format ["weaponitems %1", _x];
+    if([_x, _item] call _hasAttachment) exitWith {
+        diag_log format ["Attachment present %1", _x];
         //delete the weapon
         player removeItem (_x select 0);
         {
+            //only way is to fake disassembling the weapon and adding each part again except the one we don't want
             if(typeName _x == "ARRAY") then {
                 _x = _x select 0;
             };
@@ -163,12 +177,12 @@ _weaponItems = _weaponItems + (weaponsItems _uniform);
                 player addItem _x;
             };
         } forEach _x;
-
         true
     };
 } forEach _weaponItems;
 
 //item is only in inventory, remove it
 //regular item delete from inventory
+diag_log format ["Just removing %1", _item];
 player removeItem _item;
 true
