@@ -1,6 +1,10 @@
 params ["_item"];
 diag_log format ["Removing _item: %1", _item];
 
+private ["_deleteDone"];
+
+_deleteDone = false;
+
 _detachWeaponItem = {
     params ["_weaponItem"];
     if(typeName _weaponItem == "ARRAY") then {
@@ -46,7 +50,6 @@ if( _item == (primaryWeapon player) call Bis_fnc_BaseWeapon) exitWith {
     } forEach _weaponItems;
     //remove primary weapon
     player removeWeapon (primaryWeapon player);
-    true
 };
 
 //check if is secondary weapon
@@ -62,7 +65,6 @@ if( _item == (secondaryWeapon player) call Bis_fnc_BaseWeapon) exitWith {
     } forEach _weaponItems;
     //remove secondary weapon
     player removeWeapon (secondaryWeapon player);
-    true
 };
 
 //check if is handgun
@@ -75,7 +77,6 @@ if( _item == (handgunWeapon player) call Bis_fnc_BaseWeapon) exitWith {
     } forEach _weaponItems;
     //remove handgun
     player removeWeapon (handgunWeapon player);
-    true
 };
 
 //remove weapon from uniform if present, put attachments in inventory if they can't put on the ground
@@ -91,10 +92,12 @@ if(!(isNull _uniform)) then {
                     [_x] call _detachWeaponItem;
                 };
             } forEach _x;
-            true
+            _deleteDone = true;
         };
     } forEach _weaponItems;
 };
+
+if(_deleteDone) exitWith { true };
 
 //remove weapon from vest if present, put attachments in inventory if they can't put on the ground
 _vest = vestContainer player;
@@ -109,10 +112,12 @@ if(!(isNull _vest)) then {
                     [_x] call _detachWeaponItem;
                 };
             } forEach _x;
-            true
+            _deleteDone = true;
         };
     } forEach _weaponItems;
 };
+
+if(_deleteDone) exitWith { true };
 
 //remove weapon from backpack if present, put attachments in inventory if they can't put on the ground
 _backpack = backpackContainer player;
@@ -127,10 +132,12 @@ if(!(isNull _backpack)) then {
                     [_x] call _detachWeaponItem;
                 };
             } forEach _x;
-            true
+            _deleteDone = true;
         };
     } forEach _weaponItems;
 };
+
+if(_deleteDone) exitWith { true };
 
 //check for attachment
 //check if attachment on primary weapon
@@ -138,7 +145,6 @@ _weaponItems = primaryWeaponItems player + primaryWeaponMagazine player;
 if(_weaponItems find _item >= 0) exitWith {
     //remove attachment from primary weapon
     player removePrimaryWeaponItem _item;
-    true
 };
 
 //check if attachment on secondary weapon
@@ -146,7 +152,6 @@ _weaponItems = secondaryWeaponItems player + secondaryWeaponMagazine player;
 if(_weaponItems find _item >= 0) exitWith {
     //remove attachment from secondary weapon
     player removeSecondaryWeaponItem _item;
-    true
 };
 
 //check if attachment on handgun
@@ -154,7 +159,6 @@ _weaponItems = handgunItems player + handgunMagazine player;
 if(_weaponItems find _item >= 0) exitWith {
     //remove attachment from handgun
     player removeHandgunItem _item;
-    true
 };
 
 //check if attachment on any of the carried weapons in inventory
@@ -163,7 +167,7 @@ _weaponItems = _weaponItems + (weaponsItems _backpack);
 _weaponItems = _weaponItems + (weaponsItems _uniform);
 {
     diag_log format ["weaponitems %1", _x];
-    if([_x, _item] call _hasAttachment) exitWith {
+    if([_x, _item] call _hasAttachment) then {
         diag_log format ["Attachment present %1", _x];
         //delete the weapon
         player removeItem (_x select 0);
@@ -177,9 +181,11 @@ _weaponItems = _weaponItems + (weaponsItems _uniform);
                 player addItem _x;
             };
         } forEach _x;
-        true
+        _deleteDone = true;
     };
 } forEach _weaponItems;
+
+if(_deleteDone) exitWith { true };
 
 //item is only in inventory, remove it
 //regular item delete from inventory
