@@ -4,7 +4,7 @@ class INFINV_Dialog {
 	enableSimulation = 1;	
 	onLoad = "";
 	onUnload = "";
-	controlsBackground[] = { "InfiniteInventoryFrame", "InventoryFilter", "InventoryFilter", "EquipmentFilter",
+	controlsBackground[] = { "InfiniteInventoryFrame", "InventoryFilter", "EquipmentFilter",
 	"InventoryContainer", "EquipmentContainer", "AddSingleItemButton", "TakeSingleItemButton", "AddAllButton" };
 	
 	#include "InfiniteInventoryGui.hpp" 
