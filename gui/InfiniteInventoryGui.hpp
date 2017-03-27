@@ -18,7 +18,7 @@ class InventoryFilter: RscCombo
 	w = 13.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	tooltip = "Filter Items"; //--- ToDo: Localize;
-    onLBSelChanged = "";
+    onLBSelChanged = "[] call InfInv_fnc_setFilter;";
 };
 class EquipmentFilter: RscCombo
 {
@@ -28,7 +28,7 @@ class EquipmentFilter: RscCombo
 	w = 13.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	tooltip = "Filter items"; //--- ToDo: Localize;
-    onLBSelChanged = "";
+    onLBSelChanged = "[] call InfInv_fnc_setFilter;";
 };
 class InventoryContainer: RscListbox
 {

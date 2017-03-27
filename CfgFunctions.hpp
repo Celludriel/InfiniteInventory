@@ -9,13 +9,13 @@ class InfInv {
 		addFunction(addItemToContainer);
 		addFunction(addAllItemsToContainer);
 		addFunction(takeItemFromContainer);
-		addFunction(filterContainer);
-		addFunction(filterEquipment);
+		addFunction(setFilter);
 		addFunction(openInventory);
 		addFunction(getPlayerContainers);
 		addFunction(getContentsFromPlayerContainer);
 		addFunction(getPlayerInventoryContents);
 		addFunction(loadListBoxFromData);
+		addFunction(loadFilterData);
 		addFunction(loadEquipmentContainer);
 		addFunction(loadInventoryContainerData);
 		addFunction(loadInventoryContainer);

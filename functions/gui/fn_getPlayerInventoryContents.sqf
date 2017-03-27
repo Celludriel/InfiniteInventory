@@ -16,4 +16,6 @@ _containerContents = _containerContents + ([_backpack] call InfInv_fnc_getConten
     [_contents, _x select 0, _x select 1] call BIS_fnc_addToPairs;
 } forEach _containerContents;
 
+_contents = [_contents,[],{_x select 0},"ASCEND"] call BIS_fnc_sortBy;
+
 _contents
