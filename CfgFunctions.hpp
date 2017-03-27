@@ -21,6 +21,7 @@ class InfInv {
 		addFunction(loadInventoryContainer);
 		addFunction(toggleControls);
 		addFunction(showError);
+		addFunction(removeItemFromPlayer);
 	};
 
 	class server {
