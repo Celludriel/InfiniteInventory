@@ -1,4 +1,4 @@
-if(!isServer || hasInterface) exitWith {};
+if(!isServer) exitWith {};
 
 params ["_container", ["_defaultContents", []]];
 

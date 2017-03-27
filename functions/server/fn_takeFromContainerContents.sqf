@@ -1,4 +1,4 @@
-if(!isServer || hasInterface) exitWith {};
+if(!isServer) exitWith {};
 
 params ["_container", "_items", "_player", "_clientID"];
 
