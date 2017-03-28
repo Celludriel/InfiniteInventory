@@ -1,5 +1,4 @@
 params ["_item"];
-diag_log format ["Removing _item: %1", _item];
 
 private ["_deleteDone"];
 
@@ -166,9 +165,7 @@ _weaponItems = weaponsItems _vest;
 _weaponItems = _weaponItems + (weaponsItems _backpack);
 _weaponItems = _weaponItems + (weaponsItems _uniform);
 {
-    diag_log format ["weaponitems %1", _x];
     if([_x, _item] call _hasAttachment) then {
-        diag_log format ["Attachment present %1", _x];
         //delete the weapon
         player removeItem (_x select 0);
         {
@@ -189,6 +186,5 @@ if(_deleteDone) exitWith { true };
 
 //item is only in inventory, remove it
 //regular item delete from inventory
-diag_log format ["Just removing %1", _item];
 player removeItem _item;
 true
