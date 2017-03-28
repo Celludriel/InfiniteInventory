@@ -161,9 +161,19 @@ if(_weaponItems find _item >= 0) exitWith {
 };
 
 //check if attachment on any of the carried weapons in inventory
-_weaponItems = weaponsItems _vest;
-_weaponItems = _weaponItems + (weaponsItems _backpack);
-_weaponItems = _weaponItems + (weaponsItems _uniform);
+_weaponItems = [];
+if(!(isNull _uniform)) then {
+    _weaponItems = _weaponItems + (weaponsItems _uniform);
+};
+
+if(!(isNull _vest)) then {
+    _weaponItems = weaponsItems _vest;
+};
+
+if(!(isNull _backpack)) then {
+    _weaponItems = _weaponItems + (weaponsItems _backpack);
+};
+
 {
     if([_x, _item] call _hasAttachment) then {
         //delete the weapon
