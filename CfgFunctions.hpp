@@ -7,6 +7,7 @@ class InfInv {
 		file = "functions\gui";
 
 		addFunction(addItemToContainer);
+		addFunction(addItemToPlayer);
 		addFunction(addAllItemsToContainer);
 		addFunction(takeItemFromContainer);
 		addFunction(setFilter);

@@ -1,6 +1,6 @@
 if(!isServer) exitWith {};
 
-params ["_container", "_items"];
+params ["_container", "_items", "_clientID"];
 {
     private ["_contents"];
 
@@ -10,3 +10,4 @@ params ["_container", "_items"];
 } forEach _items;
 
 _container setVariable ["NeedsRefresh", true, true];
+[true] remoteExecCall ["InfInv_fnc_toggleControls", _clientID];

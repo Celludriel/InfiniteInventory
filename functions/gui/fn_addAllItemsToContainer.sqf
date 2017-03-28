@@ -8,4 +8,4 @@ _contents = [] call InfInv_fnc_getPlayerInventoryContents;
         [_x select 0] call InfInv_fnc_removeItemFromPlayer;
     };
 } forEach _contents;
-[INFINV_CURRENT_CONTAINER, _contents] remoteExecCall ["InfInv_fnc_addAllToContainerContents", 2];
+[INFINV_CURRENT_CONTAINER, _contents, clientOwner] remoteExecCall ["InfInv_fnc_addAllToContainerContents", 2];
