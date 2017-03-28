@@ -1,5 +1,7 @@
+#include "..\InfiniteInventoryControlIdcList.h"
+
 class INFINV_Dialog {
-	idd = 1900;
+	idd = INFINVDIALOG;
 	movingEnable = false;
 	enableSimulation = 1;	
 	onLoad = "";

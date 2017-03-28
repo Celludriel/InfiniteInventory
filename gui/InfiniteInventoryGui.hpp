@@ -4,7 +4,7 @@
 
 class InfiniteInventoryFrame: RscFrame
 {
-	idc = 1800;
+	idc = INFINVFRAME;
 	x = 0 * GUI_GRID_W + GUI_GRID_X;
 	y = 0 * GUI_GRID_H + GUI_GRID_Y;
 	w = 40 * GUI_GRID_W;
@@ -12,7 +12,7 @@ class InfiniteInventoryFrame: RscFrame
 };
 class InventoryFilter: RscCombo
 {
-	idc = 2100;
+	idc = INFINVINVENTORYFILTER;
 	x = 0.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 0.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 13.5 * GUI_GRID_W;
@@ -22,7 +22,7 @@ class InventoryFilter: RscCombo
 };
 class EquipmentFilter: RscCombo
 {
-	idc = 2101;
+	idc = INFINVEQUIPMENTFILTER;
 	x = 26 * GUI_GRID_W + GUI_GRID_X;
 	y = 0.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 13.5 * GUI_GRID_W;
@@ -32,7 +32,7 @@ class EquipmentFilter: RscCombo
 };
 class InventoryContainer: RscListbox
 {
-	idc = 1500;
+	idc = INFINVINVENTORYCONTAINER;
 	x = 0.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 2 * GUI_GRID_H + GUI_GRID_Y;
 	w = 13.5 * GUI_GRID_W;
@@ -53,7 +53,7 @@ class InventoryContainer: RscListbox
 };
 class EquipmentContainer: RscListbox
 {
-	idc = 1501;
+	idc = INFINVEQUIPMENTCONTAINER;
 	x = 26 * GUI_GRID_W + GUI_GRID_X;
 	y = 2 * GUI_GRID_H + GUI_GRID_Y;
 	w = 13.5 * GUI_GRID_W;
@@ -74,7 +74,7 @@ class EquipmentContainer: RscListbox
 };
 class AddSingleItemButton: RscButton
 {
-	idc = 1600;
+	idc = INFINVADDSINGLEBUTTON;
 	text = "<"; //--- ToDo: Localize;
 	x = 15.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 11.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -85,7 +85,7 @@ class AddSingleItemButton: RscButton
 };
 class TakeSingleItemButton: RscButton
 {
-	idc = 1601;
+	idc = INFINVTAKESINGLEBUTTON;
 	text = ">"; //--- ToDo: Localize;
 	x = 20 * GUI_GRID_W + GUI_GRID_X;
 	y = 11.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -96,7 +96,7 @@ class TakeSingleItemButton: RscButton
 };
 class AddAllButton: RscButton
 {
-	idc = 1602;
+	idc = INFINVADDALLBUTTON;
 	text = "<<<"; //--- ToDo: Localize;
 	x = 15.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 13.5 * GUI_GRID_H + GUI_GRID_Y;

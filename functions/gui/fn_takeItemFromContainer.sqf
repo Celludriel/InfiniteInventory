@@ -1,5 +1,7 @@
-_display = findDisplay 1900;
-_lb = _display displayCtrl 1500;
+#include <..\..\InfiniteInventoryControlIdcList.h>
+
+_display = findDisplay INFINVDIALOG;
+_lb = _display displayCtrl INFINVINVENTORYCONTAINER;
 _index = lbCurSel _lb;
 
 if(_index != -1) then {

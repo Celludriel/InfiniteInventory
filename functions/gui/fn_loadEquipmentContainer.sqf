@@ -1,9 +1,11 @@
+#include <..\..\InfiniteInventoryControlIdcList.h>
+
 private ["_lb", "_display", "_filter", "_contents"];
 
 //Load listbox
 _contents = [] call InfInv_fnc_getPlayerInventoryContents;
 
-_display = findDisplay 1900;
-_lb = _display displayCtrl 1501;
-_filter = _display displayCtrl 2101;
+_display = findDisplay INFINVDIALOG;
+_lb = _display displayCtrl INFINVEQUIPMENTCONTAINER;
+_filter = _display displayCtrl INFINVEQUIPMENTFILTER;
 [_lb, _contents, _filter] call InfInv_fnc_loadListBoxFromData;

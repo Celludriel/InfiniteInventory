@@ -1,3 +1,5 @@
+#include <..\..\InfiniteInventoryControlIdcList.h>
+
 params ["_container"];
 
 private ["_ok", "_display", "_lb"];
@@ -8,12 +10,12 @@ _ok = createDialog "INFINV_Dialog";
 if (!_ok) then {hint "Dialog couldn't be opened!"};
 
 //Load inventory combobox
-_display = findDisplay 1900;
-_lb = _display displayCtrl 2101;
+_display = findDisplay INFINVDIALOG;
+_lb = _display displayCtrl INFINVEQUIPMENTFILTER;
 [_lb] call InfInv_fnc_loadFilterData;
 
 //Load equipment combobox
-_lb = _display displayCtrl 2100;
+_lb = _display displayCtrl INFINVINVENTORYFILTER;
 [_lb] call InfInv_fnc_loadFilterData;
 
 INFINV_CURRENT_CONTAINER setVariable ["NeedsRefresh", true];
