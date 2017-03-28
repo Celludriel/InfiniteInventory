@@ -22,6 +22,7 @@ class InfInv {
 		addFunction(toggleControls);
 		addFunction(showError);
 		addFunction(removeItemFromPlayer);
+		addFunction(getWeaponType);
 	};
 
 	class server {

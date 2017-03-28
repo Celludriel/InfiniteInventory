@@ -9,4 +9,3 @@ _contents = [] call InfInv_fnc_getPlayerInventoryContents;
     };
 } forEach _contents;
 [INFINV_CURRENT_CONTAINER, _contents] remoteExecCall ["InfInv_fnc_addAllToContainerContents", 2];
-[true] call InfInv_fnc_toggleControls;
