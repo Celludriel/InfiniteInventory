@@ -42,41 +42,31 @@ private _playerWeapons = weaponsItems player;
 
 //Retrieve items
 private _uniformItems = [];
-{
-    _uniformItems = [_uniformItems, _x, _uniformBaseWeapons] call _addToContents;
-} forEach uniformItems player;
+if(!isNull _uniformContainer) then {
+    {
+        _uniformItems = [_uniformItems, _x, _uniformBaseWeapons] call _addToContents;
+    } forEach uniformItems player;
+};
 
 private _vestItems = [];
-{
-    _vestItems = [_vestItems, _x, _vestBaseWeapons] call _addToContents;
-} forEach vestItems player;
+if(!isNull _vestContainer) then {
+    {
+        _vestItems = [_vestItems, _x, _vestBaseWeapons] call _addToContents;
+    } forEach vestItems player;
+};
 
 private _backpackItems = [];
-{
-    _backpackItems = [_backpackItems, _x, _backpackBaseWeapons] call _addToContents;
-} forEach  backpackItems player;
+if(!isNull _backpackContainer) then {
+    {
+        _backpackItems = [_backpackItems, _x, _backpackBaseWeapons] call _addToContents;
+    } forEach  backpackItems player;
+};
 
 _ret = [
-    [
-        uniform player,
         _uniformItems,
-        []
-    ],
-    [
-        vest player,
         _vestItems,
-        []
-    ],
-    [
-        (backpack player) call BIS_fnc_basicBackpack,
         _backpackItems,
-        []
-    ],
-    [
-        "playerweapons",
-        [],
         _playerWeapons
-    ]
 ];
 
 _ret
