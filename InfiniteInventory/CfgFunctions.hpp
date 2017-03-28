@@ -4,7 +4,7 @@
 
 class InfInv {
 	class client {
-		file = "functions\gui";
+		file = "InfiniteInventory\functions\gui";
 
 		addFunction(addItemToContainer);
 		addFunction(addItemToPlayer);
@@ -27,7 +27,7 @@ class InfInv {
 	};
 
 	class server {
-		file = "functions\server";
+		file = "InfiniteInventory\functions\server";
 
 		addFunction(register);
 		addFunction(getContainerContents);

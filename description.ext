@@ -1,12 +1,12 @@
 enableDebugConsole = 1;
 
 // gui
-#include "gui\ParentClasses166.hpp"
-#include "gui\InfiniteInventoryGui.hpp"
-#include "gui\InfiniteInventoryDialog.hpp"
+#include "InfiniteInventory\gui\ParentClasses166.hpp"
+#include "InfiniteInventory\gui\InfiniteInventoryGui.hpp"
+#include "InfiniteInventory\gui\InfiniteInventoryDialog.hpp"
 
 // functions
 class CfgFunctions
 {
-	#include "CfgFunctions.hpp"
+	#include "InfiniteInventory\CfgFunctions.hpp"
 };
