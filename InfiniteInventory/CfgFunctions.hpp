@@ -24,6 +24,7 @@ class InfInv {
 		addFunction(showError);
 		addFunction(removeItemFromPlayer);
 		addFunction(getWeaponType);
+		addFunction(canAttachWeaponItem);
 	};
 
 	class server {

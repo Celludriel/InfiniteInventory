@@ -18,6 +18,11 @@ if(_index != -1) then {
             [INFINV_CURRENT_CONTAINER, [_data], player, clientOwner] remoteExecCall ["InfInv_fnc_takeFromContainerContents", 2];
         };
 
+        //possible attachment that can be added to weapon
+        if([_data] call InfInv_fnc_canAttachWeaponItem) exitWith {
+            [INFINV_CURRENT_CONTAINER, [_data], player, clientOwner] remoteExecCall ["InfInv_fnc_takeFromContainerContents", 2];
+        };
+
         if (!(player canAdd _data)) exitWith {
             hint "Not enough inventory space";
             [true] call InfInv_fnc_toggleControls;
