@@ -9,10 +9,10 @@ _vest = _playerContainers select 1;
 _backpack = _playerContainers select 2;
 _playerWeapons = _playerContainers select 3;
 
-_containerContents = _containerContents + ([_uniform] call InfInv_fnc_getContentsFromPlayerContainer);
-_containerContents = _containerContents + ([_vest] call InfInv_fnc_getContentsFromPlayerContainer);
-_containerContents = _containerContents + ([_backpack] call InfInv_fnc_getContentsFromPlayerContainer);
-_containerContents = _containerContents + ([_playerWeapons] call InfInv_fnc_getContentsFromPlayerContainer);
+_containerContents = _containerContents + ([_uniform, "ITEMS"] call InfInv_fnc_getContentsFromPlayerContainer);
+_containerContents = _containerContents + ([_vest, "ITEMS"] call InfInv_fnc_getContentsFromPlayerContainer);
+_containerContents = _containerContents + ([_backpack, "ITEMS"] call InfInv_fnc_getContentsFromPlayerContainer);
+_containerContents = _containerContents + ([_playerWeapons, "WEAPONS"] call InfInv_fnc_getContentsFromPlayerContainer);
 
 {
     [_contents, _x select 0, _x select 1] call BIS_fnc_addToPairs;
