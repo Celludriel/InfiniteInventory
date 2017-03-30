@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=3;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={5650.2588,9.463686,3979.7871};
-		dir[]={-0.018384486,-0.50562018,0.86258602};
-		up[]={-0.010773735,0.86274749,0.50551641};
-		aside[]={0.99980283,-6.9243606e-007,0.021309856};
+		pos[]={5648.1436,14.583364,3975.7922};
+		dir[]={0.14773674,-0.5391258,0.82919514};
+		up[]={0.094568513,0.84221619,0.53077716};
+		aside[]={0.9845264,-8.253046e-007,-0.17541151};
 	};
 };
 binarizationWanted=0;
@@ -31,7 +31,8 @@ addons[]=
 	"A3_Characters_F_Heads",
 	"A3_Weapons_F_Items",
 	"A3_Weapons_F_Explosives",
-	"A3_Supplies_F_Heli_Slingload"
+	"A3_Supplies_F_Heli_Slingload",
+	"A3_Supplies_F_Heli_CargoNets"
 };
 class AddonsMetaData
 {
@@ -94,7 +95,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			dataType="Group";
@@ -364,6 +365,44 @@ class Mission
 								};
 							};
 							value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[2,4,2]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F""],[48,12,12,12,12,12,4,4,12,6,4,12,12,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight""],[2,20,4]],[[""B_Kitbag_mcamo""],[4]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5644.9971,5.6349964,3984.4399};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=3;
+			type="CargoNet_01_box_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""arifle_CTAR_blk_ACO_F"",""arifle_CTAR_blk_F"",""arifle_CTAR_blk_ACO_Pointer_Snds_F"",""arifle_CTAR_blk_ARCO_F"",""arifle_CTAR_blk_ARCO_Pointer_F"",""arifle_CTAR_blk_ARCO_Pointer_Snds_F""],[1,1,1,1,1,1]],[[],[]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};

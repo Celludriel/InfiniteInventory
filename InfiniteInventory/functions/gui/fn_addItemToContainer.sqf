@@ -11,7 +11,7 @@ if(_index != -1) then {
         [false] call InfInv_fnc_toggleControls;
         [_data] call InfInv_fnc_removeItemFromPlayer;
 		
-		if(([_data] call InfInv_fn_getWeaponType) != "NO_WEAPON") then {
+		if(([_data] call InfInv_fnc_getWeaponType) != "NO_WEAPON") then {
 			_data = [_data] call BIS_fnc_baseWeapon;
 		};
 
